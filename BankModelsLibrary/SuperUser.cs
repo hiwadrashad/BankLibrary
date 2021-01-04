@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BankModelsLibrary
 {
-    class SuperUser
+    public class SuperUser
     {
         [Key]
         public string id { get; set; }

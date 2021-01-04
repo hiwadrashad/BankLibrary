@@ -5,8 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BankDALLibrary\BankDALLibrary.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BankModelsLibrary\BankModelsLibrary.csproj" />
+    <ProjectReference Include="..\BankStructuresLibrary\BankStructuresLibrary.csproj" />
   </ItemGroup>
 
 </Project>

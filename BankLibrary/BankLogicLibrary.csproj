@@ -9,7 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BankStructuresLibrary\BankStructuresLibrary.csproj" />
+    <ProjectReference Include="..\BankDALLibrary\BankDALLibrary.csproj" />
+    <ProjectReference Include="..\BankModelsLibrary\BankModelsLibrary.csproj" />
   </ItemGroup>
 
 </Project>
