@@ -2,7 +2,7 @@
 
 namespace BankLibrary
 {
-    public class Class1
+    public class BankLogic
     {
     }
 }

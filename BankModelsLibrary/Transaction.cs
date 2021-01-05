@@ -13,9 +13,9 @@ namespace BankModelsLibrary
         public double AmountMutation { get; set; }
         public AddedOrSubstractedEnum addedorsubtracted { get; set; }
         public DateTime DateOfTransaction { get; set; }
-        public User SendMoneyTooOther { get; set; }
-        public User SendMoneyFromSelf { get; set; }
-        public User RecieveMoneyFromOther { get; set; }
-        public User RecieveMoneyToSelf { get; set; }
+#nullable enable
+        public User? SendMoneyFrom { get; set; }
+        public User? SendMoneyTo { get; set; }
+#nullable disable
     }
 }
