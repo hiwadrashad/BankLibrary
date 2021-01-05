@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BankStructuresLibrary.Enums
+namespace BankModelsLibrary.Enums
 {
     public enum AddedOrSubstractedEnum
     {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using BankModelsLibrary;
 using BankStructuresLibrary;
 using BankDataStorageLibrary;
+using System.Linq;
 
 namespace BankDALLibrary
 {
@@ -133,7 +134,7 @@ namespace BankDALLibrary
 
         public bool UpdateSuperUser(SuperUser SuperUser)
         {
-            var item = _dbcontext.SuperUserModels.Find(SuperUser.id);
+            var item = _dbcontext.SuperUserModels.Where(a => a.id == SuperUser.id).FirstOrDefault();
             item = SuperUser;
             _dbcontext.SaveChanges();
             return true;
@@ -141,7 +142,7 @@ namespace BankDALLibrary
 
         public bool UpdateBank(Bank bank)
         {
-            var item = _dbcontext.BankModels.Find(bank.id);
+            var item = _dbcontext.BankModels.Where(a => a.id == bank.id).FirstOrDefault();
             item = bank;
             _dbcontext.SaveChanges();
             return true;
@@ -149,7 +150,7 @@ namespace BankDALLibrary
 
         public bool UpdateTransaction(Transaction transaction)
         {
-            var item = _dbcontext.TransactionModels.Find(transaction.id);
+            var item = _dbcontext.TransactionModels.Where(a => a.id == transaction.id).FirstOrDefault();
             item = transaction;
             _dbcontext.SaveChanges();
             return true;
