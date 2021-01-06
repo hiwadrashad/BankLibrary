@@ -13,7 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankStructuresLibrary", "Ba
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankDataStorageLibrary", "BankDataStorageLibrary\BankDataStorageLibrary.csproj", "{97410D81-C299-45C9-97FA-2D6A301A8658}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankGeneralFunctionsLibrary", "BankGeneralFunctionsLibrary\BankGeneralFunctionsLibrary.csproj", "{8FA484CA-9E65-46DF-B96F-EE8324F50724}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankGeneralFunctionsLibrary", "BankGeneralFunctionsLibrary\BankGeneralFunctionsLibrary.csproj", "{8FA484CA-9E65-46DF-B96F-EE8324F50724}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankUnitTestingLibrary", "BankUnitTestingLibrary\BankUnitTestingLibrary.csproj", "{C2D2A6E4-B1B4-42D6-AB80-E95ACD59B0E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankLoggingLibrary", "BankLoggingLibrary\BankLoggingLibrary.csproj", "{858A0C12-6C73-4593-8F9D-8E7A247B1298}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankEventsAndDelegates", "BankEventsAndDelegates\BankEventsAndDelegates.csproj", "{45AACB92-5A16-46B0-BC4A-A8B3D703BF94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +51,18 @@ Global
 		{8FA484CA-9E65-46DF-B96F-EE8324F50724}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FA484CA-9E65-46DF-B96F-EE8324F50724}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FA484CA-9E65-46DF-B96F-EE8324F50724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2D2A6E4-B1B4-42D6-AB80-E95ACD59B0E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2D2A6E4-B1B4-42D6-AB80-E95ACD59B0E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2D2A6E4-B1B4-42D6-AB80-E95ACD59B0E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2D2A6E4-B1B4-42D6-AB80-E95ACD59B0E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{858A0C12-6C73-4593-8F9D-8E7A247B1298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{858A0C12-6C73-4593-8F9D-8E7A247B1298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{858A0C12-6C73-4593-8F9D-8E7A247B1298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{858A0C12-6C73-4593-8F9D-8E7A247B1298}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45AACB92-5A16-46B0-BC4A-A8B3D703BF94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45AACB92-5A16-46B0-BC4A-A8B3D703BF94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45AACB92-5A16-46B0-BC4A-A8B3D703BF94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45AACB92-5A16-46B0-BC4A-A8B3D703BF94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

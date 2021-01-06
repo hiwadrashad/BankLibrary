@@ -42,41 +42,6 @@ namespace BankGeneralFunctionsLibrary
             }
         }
 
-        public async Task<List<BankModelsLibrary.Transaction>> ReturnTransactionsWithinSecondsTimeFrame(User user, int timeinseconds)
-        {
-           return await Task.Run(() =>
-            {
-                var date = DateTime.Now.AddSeconds(-timeinseconds);
-                var item = user.Transactions.Where(a => a.DateOfTransaction > date).ToList();
-                return item;
-            }
-            );            
-        }
-
-        public async Task<List<BankModelsLibrary.Transaction>> ReturnTransactionsWithinSecondsTimeFramePositiveTransactions(User user, int timeinseconds)
-        {
-            return await Task.Run(() =>
-            {
-                var date = DateTime.Now.AddSeconds(-timeinseconds);
-                var item = user.Transactions.Where(a => a.DateOfTransaction > date).ToList();
-                //item2 = item.
-                return item;
-            }
-             );
-        }
-
-        public async Task<List<BankModelsLibrary.Transaction>> ReturnTransactionsWithinSecondsTimeFrameNegativeTransactions(User user, int timeinseconds)
-        {
-            return await Task.Run(() =>
-            {
-                var date = DateTime.Now.AddSeconds(-timeinseconds);
-                var item = user.Transactions.Where(a => a.DateOfTransaction > date).ToList();
-                return item;
-            }
-             );
-        }
-
-
         public async void AutomatedPayment(double price, int amountoftimespayment)
         {
             var lockingobject = new object();
@@ -345,6 +310,185 @@ namespace BankGeneralFunctionsLibrary
                 }
             }
         }
+
+        #nullable enable
+
+        public async Task<List<BankModelsLibrary.User>>? ReturnAllUsersSortedOnName()
+        {
+            return await Task.Run(() =>
+            {
+                return _dataService.ReturnAllUsers().OrderBy(a => a.username).ToList();
+            }
+            );
+        }
+
+        public async Task<List<BankModelsLibrary.User>>? ReturnAllUsersReverseSortedOnName()
+        {
+            return await Task.Run(() =>
+            {
+                return _dataService.ReturnAllUsers().OrderByDescending(a => a.username).ToList();
+            }
+            );
+        }
+
+        public async Task<List<BankModelsLibrary.User>>? ReturnAllUserSortedOnSaldo()
+        {
+            return await Task.Run(() =>
+        {
+            return _dataService.ReturnAllUsers().OrderBy(a => a.AccountCredit).ToList();
+        }
+        );
+        }
+
+        public async Task<List<BankModelsLibrary.User>>? ReturnAllUserReverseSortedOnSaldo()
+        {
+            return await Task.Run(() =>
+            {
+                return _dataService.ReturnAllUsers().OrderByDescending(a => a.AccountCredit).ToList();
+            }
+        );
+        }
+
+        public async Task<List<BankModelsLibrary.User>>? ReturnAllUserSortedByRealFirstName()
+        {
+            return await Task.Run(() =>
+            {
+                return _dataService.ReturnAllUsers().OrderBy(a => a.data.FirstName).ToList();
+            }
+        );
+        }
+        public async Task<List<BankModelsLibrary.User>>? ReturnAllUserReverseSortedByRealFirstName()
+        {
+            return await Task.Run(() =>
+            {
+                return _dataService.ReturnAllUsers().OrderByDescending(a => a.data.FirstName).ToList();
+            }
+        );
+        }
+        public async Task<List<BankModelsLibrary.User>>? ReturnAllUserReverseSortedByRealLastName()
+        {
+            return await Task.Run(() =>
+            {
+                return _dataService.ReturnAllUsers().OrderByDescending(a => a.data.LastName).ToList();
+            }
+        );
+        }
+
+        public async Task<List<BankModelsLibrary.User>>? ReturnAllUserSortedByRealLastName()
+        {
+            return await Task.Run(() =>
+            {
+                return _dataService.ReturnAllUsers().OrderBy(a => a.data.LastName).ToList();
+            }
+        );
+        }
+
+        public async Task<List<BankModelsLibrary.User>>? ReturnAllUserSortedByCity()
+        {
+            return await Task.Run(() =>
+            {
+                return _dataService.ReturnAllUsers().OrderBy(a => a.data.City).ToList();
+            }
+        );
+        }
+        public async Task<List<BankModelsLibrary.User>>? ReturnAllUserReverseSortedByCity()
+        {
+            return await Task.Run(() =>
+            {
+                return _dataService.ReturnAllUsers().OrderByDescending(a => a.data.City).ToList();
+            }
+        );
+        }
+
+        public async Task<List<BankModelsLibrary.User>>? ReturnAllUserSortedByPostalCode()
+        {
+            return await Task.Run(() =>
+            {
+                return _dataService.ReturnAllUsers().OrderBy(a => a.data.PostalCode).ToList();
+            }
+        );
+        }
+        public async Task<List<BankModelsLibrary.User>>? ReturnAllUserReverseSortedPostalCode()
+        {
+            return await Task.Run(() =>
+            {
+                return _dataService.ReturnAllUsers().OrderByDescending(a => a.data.PostalCode).ToList();
+            }
+        );
+        }
+
+        public async Task<List<BankModelsLibrary.User>>? ReturnAllUserSortedByAccountCreationDate()
+        {
+            return await Task.Run(() =>
+            {
+                return _dataService.ReturnAllUsers().OrderBy(a => a.DateOfGeneration).ToList();
+            }
+        );
+        }
+        public async Task<List<BankModelsLibrary.User>>? ReturnAllUserReverseSortedAccountCreationDate()
+        {
+            return await Task.Run(() =>
+            {
+                return _dataService.ReturnAllUsers().OrderByDescending(a => a.DateOfGeneration).ToList();
+            }
+        );
+        }
+
+
+        public async Task<List<BankModelsLibrary.User>>? ReturnAllUsersWithSaldoBeneathGivenValue(double saldolimit)
+        {
+            return await Task.Run(() =>
+            {
+                return _dataService.ReturnAllUsers().Where(a => a.AccountCredit <= saldolimit).ToList();
+            }
+            );
+        }
+
+        public async Task<List<BankModelsLibrary.User>>? ReturnAllUsersWithSaldoAboveGivenValue(double saldolimit)
+        {
+            return await Task.Run(() =>
+            {
+                return _dataService.ReturnAllUsers().Where(a => a.AccountCredit >= saldolimit).ToList();
+            }
+            );
+        }
+
+        public async Task<List<BankModelsLibrary.Transaction>>? ReturnTransactionsWithinSecondsTimeFrame(User user, int timeinseconds)
+        {
+           return await Task.Run(() =>
+            {
+                var date = DateTime.Now.AddSeconds(-timeinseconds);
+                var item = user.Transactions.Where(a => a.DateOfTransaction > date).ToList();
+                return item;
+            }
+            );            
+        }
+
+        public async Task<List<BankModelsLibrary.Transaction>>? ReturnTransactionsWithinSecondsTimeFramePositiveTransactions(User user, int timeinseconds)
+        {
+            return await Task.Run(() =>
+            {
+                var date = DateTime.Now.AddSeconds(-timeinseconds);
+                var item = user.Transactions.Where(a => a.DateOfTransaction > date).ToList();
+                var positivetransactionswithintimeframe = item.Where(a => a.SendMoneyTo == user).ToList();
+                return positivetransactionswithintimeframe;
+            }
+             );
+        }
+
+        public async Task<List<BankModelsLibrary.Transaction>>? ReturnTransactionsWithinSecondsTimeFrameNegativeTransactions(User user, int timeinseconds)
+        {
+            return await Task.Run(() =>
+            {
+                var date = DateTime.Now.AddSeconds(-timeinseconds);
+                var item = user.Transactions.Where(a => a.DateOfTransaction > date).ToList();
+                var negativetransactionswithintimeframe = item.Where(a => a.SendMoneyFrom == user).ToList();
+                return negativetransactionswithintimeframe;
+            }
+             );
+        }
+
+#nullable disable
 
     }
 }
